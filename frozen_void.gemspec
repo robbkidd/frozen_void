@@ -7,5 +7,6 @@ Gem::Specification.new do |s|
   s.files = ["lib/frozen_void.rb"]
   s.homepage = "https://github.com/robbkidd/frozen_void"
   s.license = "Apache 2.0"
-  s.add_development_dependency("yard-doctest", "~> 0.1.17")
+  s.add_development_dependency("rake")
+  s.add_development_dependency("yard-doctest")
 end

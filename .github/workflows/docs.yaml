@@ -1,4 +1,4 @@
-name: Publish documentation
+name: Publish docs
 on:
   push:
     branches:
@@ -6,21 +6,21 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    name: Update gh-pages with docs
+    name: Update gh-pages
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Ruby
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+      - name: Set up Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.3
-      - name: Install dependencies
+      - name: Install dependencies 🧰
         run: bundle install
-      - name: Build Documentation
-        run: yard doc
-      - name: Publish
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Build Documentation 📝
+        run: bundle exec yard doc
+      - name: Publish 📚
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          github_token: $
-          publish_dir: ./docs
-          publish_branch: gh-pages
+          branch: gh-pages # publish target branch
+          folder: doc # directory with content to publish
 

@@ -1,4 +1,5 @@
-# a source of unalterable emptiness
+# A source of unalterable emptiness.
+#
 module FrozenVoid
   require "set"
 
@@ -15,7 +16,7 @@ module FrozenVoid
   #   another_set = FrozenVoid.set
   #   a_set.equal?(another_set) #=> true
   #
-  # @return [Set] eternally empty
+  # @return [Set] a Set eternally empty
   def self.set
     IMMUTABLE_EMPTY_SET
   end
@@ -33,7 +34,7 @@ module FrozenVoid
   #   another_array = FrozenVoid.array
   #   an_array.equal?(another_array) #=> true
   #
-  # @return [Array] never to be filled
+  # @return [Array] an Array never to be filled
   def self.array
     IMMUTABLE_EMPTY_ARRAY
   end
@@ -51,7 +52,7 @@ module FrozenVoid
   #   another_string = FrozenVoid.string
   #   a_string.equal?(another_string) #=> true
   #
-  # @return [String] forever bereft of character
+  # @return [String] a String forever bereft of character
   def self.string
     IMMUTABLE_EMPTY_STRING
   end

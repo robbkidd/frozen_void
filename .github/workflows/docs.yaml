@@ -1,0 +1,26 @@
+name: Publish documentation
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: Update gh-pages with docs
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.3
+      - name: Install dependencies
+        run: bundle install
+      - name: Build Documentation
+        run: yard doc
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: $
+          publish_dir: ./docs
+          publish_branch: gh-pages
+
